@@ -137,3 +137,12 @@ void EntityManager::RemoveType(Entity *e)
 	if (e->typeNext) { e->typeNext = e->typePrev; }
 }
 
+void EntityManager::AddInstance(Entity *e)
+{
+	instances[e->name] = e;
+}
+
+void EntityManager::RemoveInstance(Entity *e)
+{
+	instances.erase(e->name);
+}

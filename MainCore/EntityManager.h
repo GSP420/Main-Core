@@ -7,6 +7,7 @@ class Entity
 {
 public:
 	std::string type;
+	std::string name;
 
 	Entity *entNext;
 	Entity *entPrev;
@@ -53,11 +54,17 @@ public:
 	// gets the entity with the instance name
 	Entity* GetInstance(std::string name);
 
+	// adds entity to update list
 	void AddUpdate(Entity *e);
+	// removes entity from update list
 	void RemoveUpdate(Entity *e);
+	// adds type to list
 	void AddType(Entity *e);
+	// removes type from list
 	void RemoveType(Entity *e);
+	// adds instance
 	void AddInstance(Entity *e);
+	// removes instance
 	void RemoveInstance(Entity *e);
 };
 
