@@ -17,3 +17,4 @@ public:
 	//shutdowns the core interface
 	void Shutdown(void);
 };
+

@@ -16,7 +16,7 @@ int frequency_of_primes (int n) {
 	return freq;
 }
 
-class clock 
+class Clock 
 {
 	void Update(void);
 }
