@@ -1,20 +1,20 @@
-//interface for ICore 
-//Startup() :void
-//Update() :void
-//Render() :void
-//Shutdown() :void
+// interface for ICore 
+// Startup() :void
+// Update() :void
+// Render() :void
+// Shutdown() :void
+// virtual members 
+#include <iostream>
+using namespace std;
 
-
-class ICore
-{
+class ICore {
 public:
 	//starts the core interface
-	void Startup(void);
+	virtual void Startup() = 0;
 	//updates the core interface
-	void Update(void);
+	virtual void Update() = 0;
 	//renders the core interface
-	void Render(void);
+	virtual void Render() = 0;
 	//shutdowns the core interface
-	void Shutdown(void);
+	virtual void Shutdown() = 0;
 };
-
