@@ -1,6 +1,8 @@
 #include "MessageManager.h"
 #include "Windows.h"
 
+MSG msg;
+
 MessageManager::MessageManager(void)
 {
 	msgFirst = nullptr;
