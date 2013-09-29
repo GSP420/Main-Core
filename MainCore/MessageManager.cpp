@@ -17,8 +17,8 @@ void MessageManager::Update(void)
 		// remove from list
 	while(GetMessage(&Msg, NULL, 0, 0) > 0)
 		{
-		TranslateMessage(&Msg);
-		DispatchMessage(&Msg);
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
 		}
 }
 
