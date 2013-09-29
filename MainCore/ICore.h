@@ -13,8 +13,6 @@ public:
 	virtual void Startup() = 0;
 	//updates the core interface
 	virtual void Update() = 0;
-	//renders the core interface
-	virtual void Render() = 0;
 	//shutdowns the core interface
 	virtual void Shutdown() = 0;
 };
