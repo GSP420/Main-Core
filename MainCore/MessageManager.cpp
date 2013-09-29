@@ -1,4 +1,5 @@
 #include "MessageManager.h"
+#include "Windows.h"
 
 MessageManager::MessageManager(void)
 {
