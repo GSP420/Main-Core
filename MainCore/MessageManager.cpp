@@ -15,7 +15,7 @@ void MessageManager::Update(void)
 	// loop through messages
 		// send them to the proper entity
 		// remove from list
-	While(GetMessage(&Msg,NULL,0,0)>0)
+	while(GetMessage(&Msg, NULL, 0, 0) > 0)
 		{
 		TranslateMessage(&Msg);
 		DispatchMessage(&Msg);
