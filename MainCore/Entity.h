@@ -10,8 +10,8 @@ class entity {
 	int x;
 	int y;
 	int eID;					//animation ID
-	string eType;
-	string eName
+	string type;
+	string name
 protected:
 	{
 		entity(void);
@@ -19,10 +19,10 @@ protected:
 	};
 public: 
 	{
-		void Add(int eID);
+		void Added(int eID);
 		void Update(int frames);
 		void Render(D3DXRENDER3 Position);
-		void Remove(int eID);
+		void Removed(int eID);
 
 		//Getters
 		const RECT GetRect()const { return renderedItem.GetRect(); }
@@ -30,7 +30,7 @@ public:
 
 		//Setters
 		void SetID(int iD) { eID = iD; }
-		void SetEntity(string eName, string eType);
+		void SetEntity(string name, string type);
 
 	};
 }

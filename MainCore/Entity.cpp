@@ -22,8 +22,8 @@ void Entity::Render(D3DXVECTOR3 Position)
 {
 	renderedItem.Render(position, renderedItem.GetRect());
 };
-void Entity::Remove(int eID)
+void Entity::Removed(int eID)
 {
-	renderedItem.Remove(eID);
+	renderedItem.Removed(eID);
 };
 };
