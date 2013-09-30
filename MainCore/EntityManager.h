@@ -2,28 +2,6 @@
 #include <map>
 #include <stack>
 
-// placeholder until entity is implemented
-class Entity
-{
-public:
-	std::string type;
-	std::string name;
-
-	Entity *entNext;
-	Entity *entPrev;
-
-	Entity *typeNext;
-	Entity *typePrev;
-
-	Entity(void);
-	~Entity(void);
-
-	void Update(void);
-	void Render(void);
-	void Added(void);
-	void Removed(void);
-}; 
-
 class EntityManager
 {
 private:
