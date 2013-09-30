@@ -1,37 +1,14 @@
-//Will run a loop, and then print the number of clock ticks and 
-//number of seconds used
-#include <ctime>
-#include <iostream>
-
-int frequency_of_primes (int n) {
-	int i,j;
-	int update;
-	int render;
-	int game;
-	int freq=n-1;
-	for (i=2; i<=n; ++i) for (j=sqrt(i);j>1;--j) if (i%j==0) 
-	{
-		--freq; break;
-	}
-	return freq;
-}
-
-class Clock 
-{
-	void Update(void);
-}
+#include <stdio.h>
+#include <time.h>
 
 int main ()
 {
-	clock_t t;
-	int f;
-	int update;
-	int render;
-	int game;
-	t = clock();
-	  for(int x=0; x<1000; x++)
-    {
-        cout<<endl;
-    }
-    cout<<"Clock ticks: "<<clock()<<" Seconds: "<<clock()/CLOCKS_PER_SEC;
+	time_t rawtime;
+	struct tm * timeinfo;
+
+	time (&rawtime);
+	timeinfo = localtime (&rawtime);
+	printf ("Current local time and date: %s", asctime(timeinfo));
+
+	return 0;
 }
