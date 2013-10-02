@@ -1,9 +1,9 @@
 #include "EntityManager.h"
 
-
 EntityManager::EntityManager(void)
 {
 	entFirst = nullptr;
+	entCount = 0;
 }
 
 EntityManager::~EntityManager(void)
@@ -24,29 +24,37 @@ void EntityManager::Update(void)
 	}
 
 	// add entities
-	e = toAdd.top();
-	while (e)
+	if (toAdd.size() > 0)
 	{
-		AddUpdate(e);
-		AddType(e);
-
-		e->Added();
-
-		toAdd.pop();
 		e = toAdd.top();
+		while (toAdd.size() > 0)
+		{
+			AddUpdate(e);
+			AddType(e);
+			entCount ++;
+
+			e->Added();
+
+			toAdd.pop();
+			if (toAdd.size() > 0) e = toAdd.top(); 
+		}
 	}
 
 	// remove entities
-	e = toRemove.top();
-	while (e)
+	if (toRemove.size() > 0)
 	{
-		RemoveUpdate(e);
-		RemoveType(e);
-
-		e->Removed();
-
-		toRemove.pop();
 		e = toRemove.top();
+		while (toRemove.size() > 0)
+		{
+			RemoveUpdate(e);
+			RemoveType(e);
+			entCount --;
+
+			e->Removed();
+
+			toRemove.pop();
+			if (toRemove.size() > 0) e = toRemove.top();
+		}
 	}
 }
 
