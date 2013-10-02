@@ -4,6 +4,7 @@
 // Render() :void
 // Shutdown() :void
 // virtual members 
+#pragma once
 #include <iostream>
 using namespace std;
 

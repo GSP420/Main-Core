@@ -1,29 +1,32 @@
 // This is the main DLL file.
 
-#include "stdafx.h"
 #include "Entity.h"
 
-Entity::entity(void)
+Entity::Entity(void)
 {
-	eHealth = 0; 
+
 };
-Entity::~entity(void)
+
+Entity::~Entity(void)
 {
 };
-void Entity::Added(int eID)
+
+void Entity::Added()
 {
-	renderedItem.Load(eID);
+	//renderedItem.Load();
 };
-void Entity::Update(int frames)
+
+void Entity::Update()
 {
-	renderedItem.Update(frames);
+	//renderedItem.Update(frames);
 };
-void Entity::Render(D3DXVECTOR3 Position)
+
+void Entity::Render()
 {
-	renderedItem.Render(position, renderedItem.GetRect());
+	//renderedItem.Render(position, renderedItem.GetRect());
 };
-void Entity::Removed(int eID)
+
+void Entity::Removed()
 {
-	renderedItem.Removed(eID);
-};
+	//renderedItem.Removed(eID);
 };

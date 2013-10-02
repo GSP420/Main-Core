@@ -1,3 +1,4 @@
+#pragma once
 #include "ICore.h"
 #include "MessageManager.h"
 #include "EntityManager.h"
