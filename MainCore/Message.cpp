@@ -5,6 +5,9 @@ Message::Message(std::string contents, IDispatcher *sender, IDispatcher *recipie
 	msgNext = nullptr;
 
 	// set vars to parameters
+	this->contents = contents;
+	this->sender = sender;
+	this->recipient = recipient;
 }
 
 Message::~Message(void)

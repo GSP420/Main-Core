@@ -1,7 +1,4 @@
 #include "MessageManager.h"
-#include "Windows.h"
-
-MSG msg;
 
 MessageManager::MessageManager(void)
 {
@@ -17,17 +14,18 @@ void MessageManager::Update(void)
 	// loop through messages
 		// send them to the proper entity
 		// remove from list
-	while(GetMessage(&Msg, NULL, 0, 0) > 0)
-		{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
-		}
+	Message *m = msgFirst;
+	while(m)
+	{
+		m->recipient->Recieve(m);
+		m = m->msgNext;
+	}
 }
 
-void MessageManager::Add(Message message)
+void MessageManager::Add(Message *message)
 {
 	// set message->msgNext to msgFirst
-	msgNext = msgFirst;
+	message->msgNext = msgFirst;
 	// set msgFirst to message
 	msgFirst = message;
 }
