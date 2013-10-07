@@ -30,7 +30,8 @@ void EntityManager::Update(void)
 		while (toAdd.size() > 0)
 		{
 			AddUpdate(e);
-			AddType(e);
+			if (e->type != "") AddType(e);
+			if (e->name != "") AddInstance(e);
 			entCount ++;
 
 			e->Added();
@@ -47,7 +48,8 @@ void EntityManager::Update(void)
 		while (toRemove.size() > 0)
 		{
 			RemoveUpdate(e);
-			RemoveType(e);
+			if (e->type != "") RemoveType(e);
+			if (e->name != "") RemoveInstance(e);
 			entCount --;
 
 			e->Removed();
